@@ -1,0 +1,63 @@
+/**
+ *
+ * /!\ @ is reserved character! /!\ => Decode.get_functions()
+ *
+ * COORDINATES
+ * "x,y,x‘,y‘" always activable no import layer number
+ * "x,y,x‘,y‘(i" activable only when current layer==i     NEW
+ *
+ * CLCIK & CURSOR
+ * Conditions disposition
+ *  * no condition(=true) ····· => '['
+ *  * one condition ··········· => '[condition1'
+ *  * more conditions ········· => '[c1 ... [cn'
+ *  * condition1 or condition 2 => '[c1|c2'
+ *  * (c1 OR c2) AND c3 ······· => '[c1|c2[c3'
+ *
+ * Condition name
+ *  * 
+ *  * Change ',' to ';'
+ *  * 
+ *  * 
+ *  * _name · => check if ··· envars[name] ··················· is true
+ *  * !name · => check if not envars[name] ··················· is true
+ *  * +name=x => check if ··· envars[name] == x ·············· is true
+ *  * -name=x => check if ··· envars[name] == x ·············· is false
+ *  * +name↑x => check if ··· envars[name] > x ··············· is true
+ *  * -name↑x => check if ··· envars[name] > x ··············· is false
+ *  * +name↓x => check if ··· envars[name] < x ··············· is true
+ *  * -name↓x => check if ··· envars[name] < x ··············· is false
+ *  * +name»x => check if ··· envars[name] >= x ·············· is true
+ *  * -name»x => check if ··· envars[name] >= x ·············· is false
+ *  * +name«x => check if ··· envars[name] <= x ·············· is true
+ *  * -name«x => check if ··· envars[name] <= x ·············· is false
+ *  * ←name · => check if ··· envars.in_objects.includes(name) is false
+ *  * →name · => check if ··· envars.in_objects.includes(name) is true
+ *  * øname · => check if ··· envars.in_objects.concat(envars.in_discard_pile).includes(name) is false
+ *  * ºname · => check if ··· envars.in_objects.concat(envars.in_discard_pile).includes(name) is true
+ *
+ *
+ * CURSOR
+ *                         (cursor_type is class modifier)
+ * [conditions:cursor_type
+ * 
+ *
+ * CLICK
+ *  * functionName > param1, ...paramN
+ *  * all spaces removed
+ * Parameters
+ *  * separate by coma  => ','
+ *  * array of elements => [elem1[elemN
+ *  *  * empty array > '['
+ *  *  * one element > '[elem'
+ */
+
+            :{
+			"click":[""],
+			"cursor":""
+		}
+
+ 		l : '0,0,20,675(0',      //left
+        r : '1180,0,1200,675(0', //right
+        t : '21,0,1179,20(0',    //top
+        b : '21,655,1179,675(0'  //bottom

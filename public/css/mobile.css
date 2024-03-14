@@ -1,0 +1,15 @@
+@media screen and (max-width: 1199px)
+{
+    #world_window
+    {
+        top:0; left:0;
+    }
+}
+
+@media screen and (max-width: 1199px) and (min-height: 675px)
+{
+    #world_window
+    {
+        top:calc(50vh - 337px);
+    }
+}

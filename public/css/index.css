@@ -1,0 +1,46 @@
+html,body
+{
+    background-color: #000;
+    margin:0;
+    width:100%;
+    height:100%;
+}
+h1{ text-align: center; }
+button
+{
+    cursor: pointer;
+}
+.no_mergin
+{
+    background-color: #f00;
+    
+    color:transparent;
+
+    overflow: hidden;
+    
+    height:0;
+}
+#world_window
+{
+    position:absolute;
+    left:calc(50% - 600px);
+    top:calc(50vh - 337px);
+    
+    width:1200px;
+    height:675px;
+}
+audio
+{
+    position:fixed;
+}
+#btn_sound
+{
+    position:absolute;
+    top: 100px;
+}
+#lateral_menu-btn
+{
+    right:1px; top:1px;
+    cursor: pointer;
+    z-index:1;
+}

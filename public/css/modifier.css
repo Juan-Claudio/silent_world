@@ -1,0 +1,116 @@
+/* BORDERS */
+
+/* CURSORS */
+.curs-pointer{ cursor: pointer; }
+.curs-default
+{
+    cursor: url('../img/cursors/opened_hand.png') 16 16, grab;
+}
+.curs-eye
+{
+    cursor: url('../img/cursors/eye.png') 16 16, zoom-in;
+}
+.curs-object
+{
+    cursor: url('../img/cursors/object.png') 16 16, crosshair;
+}
+.curs-grab
+{
+    cursor: url('../img/cursors/closed_hand.png') 16 8, grabbing;
+}
+.curs-thumb
+{
+    cursor: url('../img/cursors/thumb.png') 16 0, pointer;
+}
+.curs-goto
+{
+    cursor: url('../img/cursors/front.png') 32 0, pointer;
+}
+.curs-l
+{
+    cursor: url('../img/cursors/left.png') 0 3, w-resize;
+}
+.curs-r
+{
+    cursor: url('../img/cursors/right.png') 32 3, e-resize;
+}
+.curs-t
+{
+    cursor: url('../img/cursors/top.png') 20 0, n-resize;
+}
+.curs-b
+{
+    cursor: url('../img/cursors/bottom.png') 20 32, s-resize;
+}
+
+/*DISPLAY*/
+.hidden
+{
+    display: none !important;
+}
+
+/* FLEX */
+/* align-content align-items align-self justify-content */
+.flex
+{
+    display:flex;
+}
+.fcol
+{
+    flex-direction: column;
+}
+.fcol-c
+{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.spatween-c
+{
+    justify-content: space-between;
+    align-items: center;
+}
+.sparound-c
+{
+    justify-content: space-around;
+    align-items: center;
+}
+.frow-c
+{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* POSITION */
+.fix
+{
+    position:fixed;
+}
+.abs
+{
+    position:absolute;
+}
+
+/* MARGIN */
+.mb-2{ margin-bottom: 10px; }
+.mt-2{ margin-top: 10px; }
+.m-2{ margin:10px; }
+
+/* padding */
+.p-2{ padding:10px; }
+
+/* TEXT */
+.txt-bold
+{
+    font-weight: bold;
+}
+.txt-center
+{
+    text-align: center;
+}
+
+/*size*/
+.w-50{ width:50%; }
+.w-80{ width:80%; }
+.w-100{ width:100%; }

@@ -1,0 +1,1552 @@
+{
+	"_":{
+        "TRUE":true,
+        "FALSE":false,
+
+        "using_object":false,
+        "in_objects":[],
+        "in_memory":[],
+		"in_discard_pile":[],
+        "into":"z1m1",
+        "these_clicks":{},
+		"back_precision":{},
+		"layer":0,
+		"savoie":false,
+		"tcheque":false,
+
+        "first_play":true,
+		"the_alarm":true,
+		"m9_in_memory":false,
+        "open_the_tap":false,
+		"open_painting":false,
+		"open_machine":false,
+		"open_locker":false,
+        "try_to_visit_park":false,
+        "try_to_visit_church":false,
+        "lock_house": false,
+        "read_where_are_keys":false,
+		"tie_rope":false,
+		"unlock_cascade":false,
+		"unlock_with_card":false,
+		"unlock_with_key":false,
+		"unlock_car":false,
+		"unlock_car_code":false,
+		"unlock_locker":false,
+		"unlock_bunker_door1":false,
+		"unlock_bunker_door2":false,
+		"discover_map":false,
+		"knob":"3",
+		"switch":false,
+		"death":false,
+		"see_spectacle_column":false
+    },
+
+
+
+    "z1m1":{
+        "l": {"click":["goto > z1m3"]},
+        "r":  {"click":["goto > z1m2, [_try_to_visit_park[_try_to_visit_church, no, _first_visit_town"]},
+        
+        "-10,-10,-1,-1":{
+			"auto":[
+				"sound > the_alarm, on, [_the_alarm",
+				"message > _death, [_death",
+				"switch_val > death, [_death",
+				"message > _first_play, [_first_play",
+				"switch_val > first_play, [_first_play"
+			]
+		},
+
+        "375,448,400,473":  {
+            "click":["sound > the_alarm, toggle, [, no, _good_when_shutdown"],
+            "cursor":"[:grab"
+        },
+
+        "766,445,826,470": {
+            "click":[
+				"take > o27, [_try_to_visit_park[_try_to_visit_church",
+				"message > _first_visit_town, [!try_to_visit_park[!try_to_visit_church[←o27"
+			],
+            "cursor":"[←o27:grab"
+        },
+
+        "497,517,527,547": {
+            "click":[
+				"message > _no_more_treasure_in_bed, [+these_clicks.497;517;527;547=3[→o15",
+				"take > o15, [+these_clicks.497;517;527;547=3, no, no"
+			],
+            "cursor":"[_read_where_are_keys[>o15:grab"
+        }
+    },
+
+
+
+    "z1m2":{
+        "l": {"click":["goto > z1m1"]},
+        "r": {"click":["goto > z1m1"]},
+
+		"-10,-10,-1,-1":  {
+			"auto":[
+				"change_back > [_open_the_tap, ",
+				"switch_val > open_the_tap, [_open_the_tap"
+			]},
+		
+		"506,350,536,380":{
+            "click":[
+				"change_back > [!open_the_tap",
+				"switch_val > open_the_tap, [!open_the_tap"
+			],
+            "cursor":"[:grab"
+        },
+        
+        "462,82,722,322":{
+            "click":[
+				"message > _already_memorized, [_open_the_tap[_m9_in_memory",
+				"memorize > m9, [_open_the_tap, no, in_memory",
+				"switch_val > m9_in_memory, [_open_the_tap[!m9_in_memory"
+			],
+            "cursor":"[_open_the_tap:eye"
+        }
+    },
+
+
+
+    "z1m3":{ 
+        "l": {"click":["goto > z1m4, [_try_to_visit_park[_try_to_visit_church, no, _first_visit_town"]},
+        "r": {"click":["goto > z1m1"]},
+
+        "117,133,142,483":{
+            "click":["goto > z1r1"],
+            "cursor":"[:l"
+        },
+
+        "460,334,490,364":{
+            "click":["goto > z1m5, [_try_to_visit_park[_try_to_visit_church, no, _first_visit_town"],
+            "cursor":"[:goto"
+        },
+
+        "781,16,916,161":{
+            "click":["memorize > m5"],
+            "cursor":"[:eye"
+        }
+    },
+
+
+
+    "z1m4":{
+		"21,21,1179,654(1":{
+			"click":[
+				"change_back > [, ",
+				"goto_layer > 0"
+			],
+			"cursor":"[:b"
+		},
+
+        "450,364,680,509(0":{
+            "click":["use_computer > house"],
+            "cursor":"[:eye"
+        },
+
+        "293,583,813,653(0":{
+            "click":[
+				"goto_layer > 1, [←o22",
+				"look > z2, [←o22",
+				"take > o22, [, no,"
+			],
+            "cursor":"[←o22:eye"
+        },
+
+        "827,502,857,562(0":{
+            "click":["goto > z1m3"],
+            "cursor":"[:goto"
+        }
+    },
+
+
+
+	"z1m5":{
+		"l": {"click":["goto > z1m3"]},
+		"r": {"click":["goto > z1m6"]},
+
+        "661,377,831,467":{
+            "click":["take > o29, [, _no_more_treasure, , _find_my_smartphone"],
+            "cursor":"[:grab"
+        }
+	},
+
+
+
+	"z1m6":{
+		"623,348,643,383":{
+			"click":["take > o25"],
+			"cursor":"[←o25:grab"
+		},
+		"252,178,337,528":{
+			"click":["goto > z1m5"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z1r1":{
+		"l":{"click":["goto > z1r2"]},
+		"r":{"click":["goto > z1r3"]},
+
+		"-10,-10,-1,-1":{
+			"auto":[
+				"goto_layer > 0",
+				"message > _nobody_here, [!try_to_visit_park[!try_to_visit_church"
+			]
+		},
+
+		"21,21,1179,654(1":{
+			"click":[
+				"change_back > [, ",
+				"goto_layer > 0"
+			],
+			"cursor":"[:b"
+		},
+
+		"541,352,626,437(0":{
+			"click":[
+				"goto > z1p1, [_lock_house",
+				"switch_val > try_to_visit_park, [!try_to_visit_park",
+				"message > _must_try_church_side, [!try_to_visit_church",
+				"message > _must_lock_house_before, [!lock_house[_try_to_visit_church"
+			],
+			"cursor":"[:goto"
+		},
+
+		"1020,428,1050,470(0":{
+			"click":[
+				"take > o26, [, _no_more_letters, , _see_corner_of_letter"
+			],
+			"cursor":"[:eye"
+		},
+
+		"717,393,742,440(0":{
+			"click":[
+				"look > z4",
+				"memorize > m8, [, no",
+				"goto_layer > 1"
+			],
+			"cursor":"[:eye"
+		}
+		
+	},
+
+
+
+	"z1r2":{
+		"l":{"click":["goto > z1r3"]},
+		"r":{"click":["goto > z1r1"]},
+
+		"-10,-10,-1,-1":{
+			"auto":["goto_layer > 0"]
+		},
+
+		"604,274,629,299":{
+			"click":["goto > z1m3"],
+			"cursor":"[:goto"
+		},
+
+		"673,225,698,270":{
+			"click":["goto > z1m3"],
+			"cursor":"[:goto"
+		},
+
+		"690,277,715,312":{
+			"click":[
+				"message > _locked_house, [+using_object=o15[!lock_house",
+				"switch_val > lock_house, [+using_object=o15[!lock_house"
+			],
+			"cursor":"[:default"
+		}
+	},
+
+
+
+	"z1r3":{
+		"l":{"click":["goto > z1r1"]},
+		"r":{"click":["goto > z1r2"]},
+
+		"-10,-10,-1,-1":{
+			"auto":["goto_layer > 0"]
+		},
+
+		"370,333,400,483":{
+			"click":[
+				"goto > z1e1, [_lock_house",
+				"switch_val > try_to_visit_church, [!try_to_visit_church",
+				"message > _must_try_park_side, [!try_to_visit_park",
+				"message > _must_lock_house_before, [!lock_house[_try_to_visit_park"
+			],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z1e1":{
+		"l":{"click":["goto > z1r3"]},
+		"r":{"click":["goto > z1r3"]},
+
+		"508,560,618,610":{
+			"click":["goto > z1e2"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z1e2":{
+		"l":{"click":["goto > z1e1"]},
+		"r":{"click":["goto > z1e3"]},
+
+		"777,499,872,594":{
+			"click":["memorize > m6"],
+			"cursor":"[:eye"
+		}
+	},
+
+
+
+	"z1e3":{
+		"21,21,1179,654(1":{
+			"click":[
+				"change_back > [, ",
+				"goto_layer > 0"
+			],
+			"cursor":"[:b"
+		},
+
+		"261,0,281,675(0":{
+			"click":["goto > z1e2"],
+			"cursor":"[:l"
+		},
+
+		"548,486,618,556(0":{
+			"click":[
+				"look > z1",
+				"goto_layer > 1"
+			],
+			"cursor":"[:eye"
+		}
+	},
+
+
+
+	"z1p1":{
+		"l":{"click":["goto > z1r1"]},
+		"r":{"click":["goto > z1r1"]},
+
+		"-10,-10,-1,-1":{
+			"auto":["goto_layer > 0"]
+		},
+
+		"193,0,318,35":{
+			"click":["goto > z1p2"],
+			"cursor":"[:t"
+		},
+
+		"549,351,649,451":{
+			"click":["goto > z1p4"],
+			"cursor":"[:goto"
+		}
+
+	},
+
+
+
+	"z1p2":{
+        "b":{"click":["goto > z1p1"]},
+
+		"863,247,913,447":{
+			"click":[
+				"goto > z1p3, [_tie_rope, no, _do_not_go_so_high"
+			],
+			"cursor":"[:goto"
+		},
+
+		"36,274,816,674":{
+			"click":[
+				"message > _rope_tied, [!tie_rope[+using_object=o19",
+				"loose > o19, [+using_object=o19",
+				"switch_val > tie_rope, [!tie_rope[+using_object=o19"
+			],
+			"cursor":"[:default"
+		}
+	},
+
+
+
+	"z1p3":{
+        "b":{"click":["goto > z1p2"]},
+
+		"502,19,732,346":{
+			"click":["memorize > m7"],
+			"cursor":"[:eye"
+		}
+	},
+
+
+
+	"z1p4":{
+		"l":{"click":["goto > z1p1","goto_layer > 0"]},
+		"r":{"click":["goto > z1p1","goto_layer > 0"]},
+
+		"370,452,820,502(0":{
+			"click":[
+				"look > z3",
+				"goto_layer > 1"
+			],
+			"cursor":"[:eye"
+		},
+
+		"511,337,711,407(0":{
+			"click":["goto > z1p5"],
+			"cursor":"[:goto"
+		},
+
+		"633,29,733,129(1":{
+			"click":["take > o33, [, no, _z3, _here_coins"],
+			"cursor":"[←o33:grab"
+		},
+
+		"269,186,369,286(1":{
+			"click":["take > o33, [, no, _z3, _here_coins"],
+			"cursor":"[←o33:grab"
+		},
+
+		"712,424,812,524(1":{
+			"click":["take > o33, [, no, _z3, _here_coins"],
+			"cursor":"[←o33:grab"
+		},
+
+		"0,27,201,227(1":{
+			"click":[
+				"change_back > [, ",
+				"goto_layer > 0"
+			],
+			"cursor":"[:b"
+		},
+
+		"0,476,201,675(1":{
+			"click":[
+				"change_back > [, ",
+				"goto_layer > 0"
+			],
+			"cursor":"[:b"
+		},
+
+		"1001,0,1201,675(1":{
+			"click":[
+				"change_back > [, ",
+				"goto_layer > 0"
+			],
+			"cursor":"[:b"
+		}
+
+	},
+
+
+
+	"z1p5":{
+		"l":{"click":["goto > z1p4"]},
+
+		"1170,0,1200,300":{
+			"click":["goto > z1p7"],
+			"cursor":"[:r"
+		},
+
+		"172,100,312,220":{
+			"click":["goto > z1p6"],
+			"cursor":"[:goto"
+		},
+
+		"21,467,110,557":{
+			"click":["take > o19, [!tie_rope"],
+			"cursor":"[←o19[!tie_rope:grab"
+		}
+	},
+
+
+
+	"z1p6":{
+		"b":{"click":["goto > z1p5"]},
+
+		"-10,-10,-1,-1":{
+			"auto":["animate_back > 3"]
+		},
+
+		"589,172,689,322":{
+			"click":["goto > z1g1, [_unlock_cascade"],
+			"cursor":"[_unlock_cascade:goto"
+		}
+	},
+
+
+
+	"z1p7":{
+		"l":{"click":["goto > z1p5"]},
+
+		"173,614,218,654":{
+			"click":["take > o11"],
+			"cursor":"[←o11:grab"
+		}
+	},
+
+
+
+	"z1g1":{
+        "b":{"click":["goto > z1p6"]},
+
+		"536,298,591,353":{
+			"click":["use_computer > cave"],
+			"cursor":"[:eye"
+		}
+	},
+
+
+
+	"z2r1":{
+		"72,195,182,565":{
+			"click":["goto > z2re2"],
+			"cursor":"[:l"
+		},
+
+		"796,334,846,484":{
+			"click":["goto > z2re1"],
+			"cursor":"[:goto"
+		},
+
+		"588,370,658,440":{
+			"click":["goto > z2r2"],
+			"cursor":"[:goto"
+		},
+
+		"936,249,976,569":{
+			"click":["goto > z2pa1"],
+			"cursor":"[:r"
+		}
+	},
+
+
+
+	"z2r2":{
+        "b":{"click":["goto > z2r1"]},
+
+		"355,446,415,496":{
+			"click":["goto > z2cc1"],
+			"cursor":"[:goto"
+		},
+
+		"847,577,907,627":{
+			"click":["goto > z2pa1"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z2re1":{
+		"-10,-10,-1,-1":{
+			"auto":[
+				"change_back > [→o18[_open_painting, _taken2",
+				"change_back > [←o18[_open_painting, _taken",
+				"change_back > [!open_painting, ",
+				"goto_layer > 0, [!open_painting",
+				"goto_layer > 1, [_open_painting"
+			]
+		},
+
+		"0,0,20,675":{
+			"click":[
+				"goto > z2r1",
+				"goto_layer > 0"
+			],
+			"cursor":"[:l"
+		},
+
+		"670,170,850,470(0":{
+			"click":[
+				"switch_val > open_painting, [!open_painting",
+				"change_back > [→o18, _taken2",
+				"change_back > [←o18, _taken",
+				"goto_layer > 1"
+			],
+			"cursor":"[:grab"
+		},
+
+		"726,430,776,455(1":{
+			"click":[
+				"change_back > [←o18, _taken2",
+				"take > o18"
+			],
+			"cursor":"[←o18:grab"
+		},
+
+		"716,143,866,243(1":{
+			"click":[
+				"change_back > [,",
+				"switch_val > open_painting, [_open_painting",
+				"goto_layer > 0"
+			],
+			"cursor":"[:grab"
+		},
+
+		"785,252,935,352(1":{
+			"click":[
+				"change_back > [,",
+				"switch_val > open_painting, [_open_painting",
+				"goto_layer > 0"
+			],
+			"cursor":"[:grab"
+		}
+	},
+
+
+
+	"z2re2":{
+		"l":{"click":["goto > z2r1"]},
+		"r":{"click":["goto > z2r1"]},
+
+		"755,321,790,346":{
+			"click":["take > o34"],
+			"cursor":"[←o34:grab"
+		},
+
+		"678,112,768,287":{
+			"click":["goto > z2re3"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z2re3":{
+		"0,0,130,675":{
+			"click":["goto > z2re2"],
+			"cursor":"[:l"
+		},
+		"1070,0,1200,675":{
+			"click":["goto > z2re2"],
+			"cursor":"[:r"
+		},
+
+		"964,636,999,671":{
+			"click":["goto > z2re6, [_discover_map"],
+			"cursor":"[_discover_map:eye"
+		},
+
+		"457,298,557,438":{
+			"click":["goto > z2re4"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z2re4":{
+        "b":{"click":["goto > z2re3"]},
+
+		"516,327,558,377":{
+			"click":[
+				"goto > z2re5, [_unlock_with_card[_unlock_with_key",
+				"message > _door_need_two_unlock, [_unlock_with_card[!unlock_with_key[-using_object=o17",
+				"message > _door_need_two_unlock, [!unlock_with_card[_unlock_with_key[-using_object=o14",
+				"message > _door_closed, [!unlock_with_card[!unlock_with_key[-using_object=o17[-using_object=o14",
+				"message > _card_effect, [!unlock_with_card[+using_object=o14",
+				"switch_val > unlock_with_card, [!unlock_with_card[+using_object=o14",
+				"message > _key_effect, [!unlock_with_key[+using_object=o17",
+				"switch_val > unlock_with_key, [!unlock_with_key[+using_object=o17"
+			],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z2re5":{
+		"0,0,120,675":{
+			"click":["goto > z2re3"],
+			"cursor":"[:l"
+		},
+		"1084,0,1200,675":{
+			"click":["goto > z2re3"],
+			"cursor":"[:r"
+		},
+
+		"262,528,304,613":{
+			"click":["take > o31"],
+			"cursor":"[←o31:grab"
+		}
+	},
+
+
+
+	"z2re6":{
+		"l":{
+			"click":[
+				"goto > z2re3",
+				"goto_layer > 0"
+			]
+		},
+		"r":{
+			"click":[
+				"goto > z2re3",
+				"goto_layer > 0"
+			]
+		},
+		
+
+		"467,0,587,674(0":{
+			"click":[
+				"message > _do_not_break_floor, [→o14",
+				"change_back > [←o14, _taken1",
+				"goto_layer > 1, [←o14"
+			],
+			"cursor":"[:grab"
+		},
+
+		"483,303,563,353(1":{
+			"click":[
+				"take > o14, [, no, ",
+				"goto_layer > 0"
+			],
+			"cursor":"[←o14:grab"
+		}
+	},
+
+
+
+	"z2cc1":{
+		"l":{"click":["goto > z2r2"]},
+		"r":{"click":["goto > z2r2"]},
+
+		"948,397,1028,517":{
+			"click":[
+				"message > _very_clean_trash, [→o23",
+				"take > o23, [, no,"
+			],
+			"cursor":"[:grab"
+		},
+
+		"591,322,1091,362":{
+			"click":["goto > z2cc2"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z2cc2":{
+		"l":{"click":["goto > z2cc1"]},
+		"r":{"click":["goto > z2cc1"]},
+
+		"278,88,608,248":{
+			"click":["goto > z2cc5"],
+			"cursor":"[:t"
+		},
+
+		"650,99,710,179":{
+			"click":["goto > z2cc3"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z2cc3":{
+		"l":{"click":["goto > z2cc2"]},
+		"r":{"click":["goto > z2cc2"]},
+
+		"309,558,369,668":{
+			"click":["take > o5, [øo5"],
+			"cursor":"[øo5:grab"
+		},
+
+		"604,47,674,237":{
+			"click":["goto > z2cc4"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z2cc4":{
+        "r":{"click":["goto > z2cc3"]},
+
+		"128,436,148,511":{
+			"click":["take > o12, [øo12"],
+			"cursor":"[øo12:grab"
+		}
+	},
+
+
+
+	"z2cc5":{
+        "r":{"click":["goto > z2cc6"]},
+		"b":{"click":["goto > z2cc2"]},
+
+		"350,321,410,481":{
+			"click":["take > o17, [+these_clicks.350;321;410;481=4, no, no"],
+			"cursor":"[:default"
+		}
+	},
+
+
+
+	"z2cc6":{
+		"-10,-10,-1,-1":  {"auto":["interact > elevator_screen, append, [, unmold"]},
+		
+		"592,347,622,392":{
+			"click":["interact > floors_menu, replace"],
+			"cursor":"[:thumb"
+		}
+	},
+
+
+
+	"z2pa1":{
+		"l":{"click":["goto > z2r2"]},
+		"r":{"click":["goto > z2r1"]},
+
+		"555,345,645,425":{
+			"click":["goto > z2h1"],
+			"cursor":"[:goto"
+		},
+
+		"787,228,947,488":{
+			"click":["goto > z2pa2"],
+			"cursor":"[:r"
+		}
+	},
+
+
+
+	"z2pa2":{
+		"l":{"click":["goto > z2pa1"]},
+		"r":{"click":["goto > z2pa1"]},
+
+		"966,205,1011,250":{
+			"click":["take > o7, [øo7"],
+			"cursor":"[øo7:grab"
+		},
+
+		"521,413,656,458":{
+			"click":["goto > z2pa3"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z2pa3":{
+		"0,0,125,675":{"click":["goto > z2pa2"],"cursor":"[:l"},
+		"1075,0,1200,675":{"click":["goto > z2pa2"],"cursor":"[:r"},
+		
+		"319,421,384,471":{
+			"click":[
+				"switch_val > unlock_car, [!unlock_car[+using_object=o18",
+				"goto > z2pa4, [_unlock_car",
+				"message > _car_locked, [!unlock_car"
+			],
+			"cursor":"[:grab"
+		},
+
+		"197,379,277,409":{
+			"click":[
+				"switch_val > unlock_car, [!unlock_car[+using_object=o18",
+				"goto > z2pa4, [_unlock_car",
+				"message > _car_locked, [!unlock_car"
+			],
+			"cursor":"[:grab"
+		},
+
+		"409,354,489,394":{
+			"click":["goto > z2pa5"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z2pa4":{
+		"0,0,120,675":{
+			"click":["goto > z2pa3", "interact > car_code, hide"],
+			"cursor":"[:l"
+		},
+		"1080,0,1200,675":{
+			"click":["goto > z2pa3", "interact > car_code, hide"],
+			"cursor":"[:r"
+		},
+
+		"-10,-10,-1,-1":  {"auto":["change_back > [_unlock_car_code"]},
+
+		"0,0,1200,675(1":{
+			"click":[
+				"goto_layer > 0",
+				"change_back > [, "
+			],
+			"cursor":"[:b"
+		},
+
+		"0,0,1200,675(2":{
+			"click":[
+				"goto_layer > 0",
+				"change_back > [, "
+			],
+			"cursor":"[:b"
+		},
+		
+		"535,134,655,224":{
+			"click":["interact > car_code, show, [!unlock_car_code"],
+			"cursor":"[!unlock_car_code:grab"
+		},
+
+		"510,0,690,25":{
+			"click":[
+				"goto_layer > 1",
+				"look > z5"
+			],
+			"cursor":"[:eye"
+		},
+
+		"264,180,434,205":{
+			"click":[
+				"goto_layer > 2",
+				"look > z6"
+			],
+			"cursor":"[:eye"
+		},
+
+		"457,293,487,323":{
+			"click":[
+				"message > _car_need_code, [!unlock_car_code, _need_gps"
+			],
+			"cursor":"[:grab"
+		}
+	},
+
+
+
+	"z2pa5":{
+		"l":{"click":["goto > z2pa3"]},
+		"r":{"click":["goto > z2cc6"]}
+	},
+
+
+
+	"z2h1":{
+		"0,0,20,675":{
+			"click":[
+				"goto > z2pa1",
+				"goto_layer > 0"
+			],
+			"cursor":"[:l"
+		},
+			
+		"1180,0,1200,675":{
+			"click":[
+				"goto > z2pa1",
+				"goto_layer > 0"
+			],
+			"cursor":"[:r"
+		},
+
+		"-10,-10,-1,-1":  {
+			"auto":[
+				"goto_layer > 1, [_open_machine",
+				"goto_layer > 0, [!open_machine"
+			]
+		},
+
+		"631,415,801,525(0":{
+			"click":[
+				"change_back > [!open_machine[←o13, _taken1",
+				"change_back > [!open_machine[→o13",
+				"goto_layer > 1, [!open_machine",
+				"switch_val > open_machine, [!open_machine"	
+			],
+			"cursor":"[:grab"
+		},
+
+		"636,421,686,551(1":{
+			"click":[
+				"change_back > [,",
+				"goto_layer > 0",
+				"switch_val > open_machine, [_open_machine"	
+			],
+			"cursor":"[:grab"
+		},
+
+		"678,470,788,520(1":{
+			"click":["take > o13, [øo13"],
+			"cursor":"[øo13:grab"
+		},
+
+		"1011,95,1096,180":{
+			"click":[
+				"goto_layer > 0",
+				"goto > z2cc6"
+			],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z3r1":{
+		"l":{"click":["goto > z3r3"]},
+		"r":{"click":["goto > z3r3"]},
+
+		"92,453,142,483":{
+			"click":[
+				"take > o30, [, _nothing_more, "
+			],
+			"cursor":"[:eye"
+		},
+
+		"502,413,612,463":{
+			"click":["goto > z3r2"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z3r2":{
+        "1070,0,1200,675":{"click":["goto > z3r1"], "cursor":"[:r"},
+
+		"-10,-10,-1,-1":{
+			"auto":["switch_val > unlock_cascade, [!unlock_cascade[→o30"]
+		},
+
+		"477,419,897,569":{
+			"click":["goto > z3me1"],
+			"cursor":"[:b"
+		}
+	},
+
+
+
+	"z3r3":{
+        "b":{"click":["goto > z3t3"]},
+
+		"465,230,615,300":{
+			"click":["goto > z3r1"],
+			"cursor":"[:goto"
+		},
+
+		"687,351,837,421":{
+			"click":["goto > z3me6"],
+			"cursor":"[:goto"
+		},
+
+		"0,438,50,488":{
+			"click":["take > o3, [øo3"],
+			"cursor":"[øo3:grab"
+		}
+	},
+
+
+
+	"z3me1":{
+		"l":{"click":["goto > z3me2"]},
+		"r":{"click":["goto > z3me2"]},
+
+		"635,489,745,589":{
+			"click":["take > o39"],
+			"cursor":"[←o39:grab"
+		},
+
+		"528,260,708,410":{
+			"click":["goto > z3me3"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z3me2":{
+		"l":{"click":["goto > z3me1","goto_layer > 0"]},
+		"r":{"click":["goto > z3me1","goto_layer > 0"]},
+		"t":{"click":["goto > z3r2","goto_layer > 0"]},
+
+		"-10,-10,-1,-1":  {
+			"auto":["change_back > [, "]
+		},
+
+		"493,482,713,632(0":{
+			"click":["look > z7","goto_layer > 1"],
+			"cursor":"[:grab"
+		},
+
+		"0,0,1200,675(1":{
+			"click":["look > z8","goto_layer > 2"],
+			"cursor":"[:thumb"
+		},
+
+		"0,0,1200,675(2":{
+			"click":["goto > z3me7","goto_layer > 0"],
+			"cursor":"[:thumb"
+		}
+	},
+
+
+
+	"z3me3":{
+		"l":{"click":["goto > z3me4"]},
+		"r":{"click":["goto > z3me1"]},
+
+		"531,165,601,665":{
+			"click":["goto > z3me5"],
+			"cursor":"[:l"
+		},
+
+		"873,248,963,428":{
+			"click":["goto > z3me6"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z3me4":{
+		"l":{"click":["goto > z3me3"]},
+		"r":{"click":["goto > z3me3"]},
+
+		"510,391,590,471":{
+			"click":["goto > z3t1"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z3me5":{
+        "r":{"click":["goto > z3me3"]},
+
+		"323,263,353,403":{
+			"click":["memorize > m3"],
+			"cursor":"[:eye"
+		},
+
+		"610,480,640,570":{
+			"click":["memorize > m3"],
+			"cursor":"[:eye"
+		},
+
+		"948,251,978,341":{
+			"click":["memorize > m3"],
+			"cursor":"[:eye"
+		}
+	},
+
+
+
+	"z3me6":{
+		"l":{"click":["goto > z3r3", "goto_layer > 0"]},
+		"r":{"click":["goto > z3me3", "goto_layer > 0"]},
+
+		
+		"630,403,660,423(0":{
+			"click":[
+				"message > _choose_locker, [!unlock_locker[+using_object=o33",
+				"message > _nothing_happends, [_unlock_locker[+using_object=o33",
+				"switch_val > unlock_locker, [!unlock_locker[+using_object=o33",
+				"message > _need_coin, [-using_object=o33",
+				"loose > o33, [+using_object=o33, [_FALSE"
+			],
+			"cursor":"[:eye"
+		},
+
+		"443,269,513,329(0":{
+			"click":[
+				"message > _locker_locked, [!unlock_locker[!open_locker",
+				"change_back > [_unlock_locker[!open_locker[←o10, _taken1",
+				"change_back > [_unlock_locker[!open_locker[→o10, _taken",
+				"change_back > [_open_locker,",
+				"goto_layer > 1, [_unlock_locker[!open_locker[←o10",
+				"switch_val > open_locker, [_unlock_locker"
+			],
+			"cursor":"[:grab"
+		},
+
+		"205,268,435,588(0":{
+			"click":[
+				"message > _locking_locker, [_unlock_locker[←o10",
+				"message > _locker_locked, [!unlock_locker|→o10",
+				"switch_val > unlock_locker, [_unlock_locker[←o10"
+			],
+			"cursor":"[:grab"
+		},
+
+		"520,268,590,588(0":{
+			"click":[
+				"message > _locking_locker, [_unlock_locker[←o10",
+				"message > _locker_locked, [!unlock_locker|→o10",
+				"switch_val > unlock_locker, [_unlock_locker[←o10"
+			],
+			"cursor":"[:grab"
+		},
+
+		"441,335,511,585(0":{
+			"click":[
+				"message > _locking_locker, [_unlock_locker[←o10",
+				"message > _locker_locked, [!unlock_locker|→o10",
+				"switch_val > unlock_locker, [_unlock_locker[←o10"
+			],
+			"cursor":"[:grab"
+		},
+
+		"676,268,976,588(0":{
+			"click":[
+				"message > _locking_locker, [_unlock_locker[←o10",
+				"message > _locker_locked, [!unlock_locker|→o10",
+				"switch_val > unlock_locker, [_unlock_locker[←o10"
+			],
+			"cursor":"[:grab"
+		},
+
+		"435,265,455,330(1":{
+			"click":[
+				"change_back > [,",
+				"switch_val > open_locker",
+				"goto_layer > 0"
+			],
+			"cursor":"[:grab"
+		},
+
+		"461,310,496,330(1":{
+			"click":[
+				"take > o10",
+				"change_back > ",
+				"goto_layer > 0"
+			],
+			"cursor":"[←o10:grab"
+		}
+	},
+
+
+
+	"z3me7":{
+		"0,0,140,675":{"click":["goto > z3me2"], "cursor":"[:l"},
+		"1060,0,1200,675":{"click":["goto > z3me2"], "cursor":"[:r"},
+
+		"352,109,852,509":{
+			"click":[
+				"take > o1, [→o32[øo1, no, _taken1",
+				"take > o32"
+			],
+			"cursor":"[←o32|øo1:grab"
+		}
+	},
+
+
+
+	"z3t1":{
+		"l":{"click":["goto > z3me4"]},
+		"r":{"click":["goto > z3me4"]},
+
+		"208,210,388,390":{
+			"click":["goto > z3t2"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z3t2":{
+		"0,0,270,675":{"click":["goto > z3t1"], "cursor":"[:l"},
+		"930,0,1200,675":{"click":["goto > z3t1"], "cursor":"[:r"},
+
+		"356,61,806,151":{
+			"click":["memorize > m4"],
+			"cursor":"[:eye"
+		},
+
+		"564,401,614,451":{
+			"click":["goto > z3t3"],
+			"cursor":"[:goto"
+		},
+
+		"490,377,530,477":{
+			"click":["goto > z3t4"],
+			"cursor":"[:l"
+		}
+	},
+
+
+
+	"z3t3":{
+		"l":{"click":["goto > z3t2"]},
+		"r":{"click":["goto > z3t2"]},
+
+		"483,312,683,512":{
+			"click":["goto > z3r3"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z3t4":{
+		"l":{"click":["goto > z3t1"]},
+		"r":{"click":["goto > z3t3"]},
+
+		"313,273,713,673":{
+			"click":["goto > z3t5"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z3t5":{
+		"l":{"click":["goto > z3t2"]},
+		"r":{"click":["goto > z3t2"]},
+
+		"500,190,700,440":{
+			"click":["goto > z3b1"],
+			"cursor":"[:goto"
+		}
+	},
+
+
+
+	"z3b1":{
+		"l":{"click":["goto > z3t5"]},
+		"r":{"click":["goto > z3t5"]},
+
+		"653,297,973,337":{
+			"click":["memorize > m1"],
+			"cursor":"[:eye"
+		},
+
+		"1004,474,1034,504":{
+			"click":[
+				"message > _good_hiding_place, [ºo2",
+				"take > o2, [øo2, no, no"
+			],
+			"cursor":"[:eye"
+		},
+
+		"366,340,416,390":{
+			"click":["goto > z3b2"],
+			"cursor":"[:goto"
+		},
+
+		"467,345,497,415":{
+			"click":["goto > z3b6"],
+			"cursor":"[:r"
+		},
+
+		"604,329,634,459":{
+			"click":["goto > z3b4"],
+			"cursor":"[:r"
+		}
+	},
+
+
+
+	"z3b2":{
+		"l":{"click":["goto > z3b1"]},
+		"r":{"click":["goto > z3b1"]},
+		
+		"663,227,753,497":{
+			"click":["goto > z3b3"],
+			"cursor":"[:l"
+		},
+
+		"393,485,448,505":{
+			"click":["take > o21"],
+			"cursor":"[←o21:grab"
+		}
+	},
+
+
+
+	"z3b3":{
+		"0,0,125,675":{"click":["goto > z3b2"], "cursor":"[:l"},
+
+		"655,383,825,633":{
+			"click":["take > o24"],
+			"cursor":"[←o24:grab"
+		}
+	},
+
+
+
+	"z3b4":{
+        "0,0,180,675":{"click":["goto > z3b1"], "cursor":"[:l"},
+
+		"280,251,460,501":{
+			"click":["message > _dark_empty_room"],
+			"cursor":"[:eye"
+		},
+
+		"710,238,840,538":{
+			"click":["goto > z3b5"],
+			"cursor":"[:b"
+		}
+	},
+
+
+
+	"z3b5":{
+		"l":{"click":["goto > z3b4"]},
+		"r":{"click":["goto > z3b4"]},
+
+		"-10,-10,-1,-1":  {"auto":["change_back > [_switch[+knob=1"]},
+
+		"506,437,556,497":{
+			"click":[
+				"message > _unknown_grid, [!switch[-knob=1",
+				"take > o16, [_switch[+knob=1, no, no, _big_key_in_backpack"
+			],
+			"cursor":"[:eye"
+		}
+	},
+
+
+
+	"z3b6":{
+		"1080,0,1200,675":{"click":["goto > z3b1"], "cursor":"[:r"},
+
+		"-10,-10,-1,-1":{
+			"auto":[
+				"change_back > [→o16"
+			]
+		},
+
+		"572,288,622,468":{
+			"click":["goto > z3b7"],
+			"cursor":"[:goto"
+		},
+
+		"481,296,531,321":{
+			"click":[
+				"goto > z3b9, [←o16",
+				"message > _switches_ok, [→o16"
+			],
+			"cursor":"[:eye"
+		},
+
+		"643,317,673,347":{
+			"click":[
+				"goto > z3b10, [←o16",
+				"message > _switches_ok, [→o16"
+			],
+			"cursor":"[:eye"
+		},
+
+		"134,128,184,628":{
+			"click":[
+				"message > _unlocked_door, [+using_object=o16[!unlock_bunker_door1",
+				"message > _unblocked_door, [_unlock_bunker_door1[+using_object=o21[!unlock_bunker_door2",
+				"message > _locked_door, [!unlock_bunker_door1[-using_object=o16",
+				"message > _blocked_door, [_unlock_bunker_door1[!unlock_bunker_door2[-using_object=o21",
+				"switch_val > unlock_bunker_door1, [+using_object=o16[!unlock_bunker_door1",
+				"switch_val > unlock_bunker_door2, [_unlock_bunker_door1[+using_object=o21[!unlock_bunker_door2",
+				"change_back > [_unlock_bunker_door1[_unlock_bunker_door2, _door",
+				"goto > z3b8, [_unlock_bunker_door1[_unlock_bunker_door2"
+			],
+			"cursor":"[:l"
+		},
+
+		"485,247,555,287":{
+			"click":[
+				"message > _white_sheet, [-using_object=o9[→o35",
+				"take > o35, [-using_object=o9, no, no, _paper_behind",
+				"memorize > m11, [+using_object=o9, no, _not_white_sheet"
+			],
+			"cursor":"[:eye"
+		}
+	},
+
+
+
+	"z3b7":{
+		"l":{"click":["goto > z3b6"]},
+		"r":{"click":["goto > z3b6"]},
+
+		"571,495,721,525":{
+			"click":["memorize > m2"],
+			"cursor":"[:eye"
+		}
+	},
+
+
+
+	"z3b8":{
+		"0,0,320,675":{"click":["goto > z3b6"], "cursor":"[:l"},
+		"1880,0,1200,675":{"click":["goto > z3b6"], "cursor":"[:r"},
+
+		"-10,-10,-1,-1":{
+			"auto":[
+				"animate_back > 1"
+			]
+		},
+
+		"526,34,846,654":{
+			"click":[
+				"switch_val > death",
+				"goto > z1m1"
+			],
+			"cursor":"[:goto"
+		}
+    },
+
+
+
+	"z3b9":{
+		"0,0,120,675":{"click":["goto > z3b6"], "cursor":"[:l"},
+		"1080,0,1200,675":{"click":["goto > z3b6"], "cursor":"[:r"},
+
+		"-10,-10,-1,-1":{
+			"auto":[
+				"change_back > [!switch, ",
+				"change_back > [_switch, _down"
+			]
+		},
+
+		"539,172,659,472":{
+			"click":[
+				"switch_val > switch",
+				"change_back > [!switch, ",
+				"change_back > [_switch, _down"
+			],
+			"cursor":"[:grab"
+		}
+    },
+	
+
+
+	"z3b10":{
+		"0,0,120,675":{"click":["goto > z3b6"], "cursor":"[:l"},
+		"1080,0,1200,675":{"click":["goto > z3b6"], "cursor":"[:r"},
+
+		"-10,-10,-1,-1":{
+			"auto":[
+				"change_back > [+knob=0, ",
+				"change_back > [+knob=1, _p1",
+				"change_back > [+knob=2, _p2",
+				"change_back > [+knob=3, _p3"
+			]
+		},
+
+		"554,290,644,380":{
+			"click":[
+				"increment_val > knob, 3",
+				"change_back > [+knob=0, ",
+				"change_back > [+knob=1, _p1",
+				"change_back > [+knob=2, _p2",
+				"change_back > [+knob=3, _p3"
+			],
+			"cursor":"[:grab"
+		}
+    }
+}
